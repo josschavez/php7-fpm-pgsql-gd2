@@ -4,7 +4,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpq-dev \
         libzip-dev \
         libicu-dev \
-        libmemcached-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng12-dev \
@@ -18,7 +17,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install pdo_pgsql \
     && docker-php-ext-install pgsql \
     && docker-php-ext-install intl \
-    && docker-php-ext-configure memcached \
-    && docker-php-ext-install memcached \
     && rm -rf /var/lib/apt/lists/*
 CMD ["php-fpm"]
