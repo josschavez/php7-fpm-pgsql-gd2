@@ -8,5 +8,7 @@ RUN buildDeps="libpq-dev libzip-dev libicu-dev" && \
         pdo \
         pdo_pgsql \
         pgsql \
-        intl 
+        intl
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+RUN docker-php-ext-install gd
 CMD ["php-fpm"]
