@@ -1,9 +1,9 @@
 FROM php:7.0-fpm
 
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-RUN apt-get update && apt-get install -y nodejs
-
-node -v
+RUN apt-get update && apt-get install curl
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
+RUN apt-get install -y nodejs
+RUN node -v
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libpq-dev \
@@ -23,4 +23,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install pgsql \
     && docker-php-ext-install intl \
     && rm -rf /var/lib/apt/lists/*
+
+
 CMD ["php-fpm"]
