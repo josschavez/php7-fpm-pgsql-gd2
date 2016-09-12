@@ -2,6 +2,7 @@ FROM php:7.0-fpm
 
 RUN apt-get update && apt-get install curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
+RUN apt-get update
 RUN apt-get install -y nodejs
 RUN node -v
 
