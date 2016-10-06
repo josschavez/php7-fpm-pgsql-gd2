@@ -1,1 +1,1 @@
-# php7-fpm-pgsql-gd2
+# php7-fpm-mysql-gd2

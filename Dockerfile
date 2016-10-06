@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         --with-webp-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo \
-    && docker-php-ext-install pdo_pgsql \
-    && docker-php-ext-install pgsql \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysql \
     && docker-php-ext-install intl \
     && rm -rf /var/lib/apt/lists/*
 
