@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo \
     && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mysql \
+    && docker-php-ext-install mysqli \
     && docker-php-ext-install intl \
     && rm -rf /var/lib/apt/lists/*
 
